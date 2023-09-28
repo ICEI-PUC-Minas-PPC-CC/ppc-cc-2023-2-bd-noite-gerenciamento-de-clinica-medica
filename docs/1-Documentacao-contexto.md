@@ -30,13 +30,14 @@ Na primeira análise, quais foram os atributos iniciais encontrados?
 
 # 3. Modelo Conceitual
 
+![image](https://github.com/ICEI-PUC-Minas-PPC-CC/ppc-cc-2023-2-bd-noite-gerenciamento-de-clinica-medica/assets/117238473/fc37dc31-e10e-4b23-b3d6-2d86ec73c88f)
 
 
 # 4. Representação Tabular
 
-Médicos = (<ins>CRM</ins>, CPF, nome completo, data de nascimento, telefone, e-mail, especialidade)
-Pacientes = (<ins>CPF</ins>, nome completo, data de nascimento, endereço, telefone, e-mail)
-Remédios = (<ins>ID</ins>, nome, laboratório, quantidade, validade, tarja, restrição, preço)
-Prescrições = (<ins>ID</ins>, paciente, médico, data, descrição)
+- Médicos = (<ins>CRM</ins>, CPF, nome completo, data de nascimento, telefone, e-mail, especialidade)
+- Pacientes = (<ins>CPF</ins>, nome completo, data de nascimento, endereço, telefone, e-mail)
+- Remédios = (<ins>ID</ins>, nome, laboratório, quantidade, validade, tarja, restrição, preço)
+- Prescrições = (<ins>ID</ins>, paciente, médico, data, descrição)
 
 
