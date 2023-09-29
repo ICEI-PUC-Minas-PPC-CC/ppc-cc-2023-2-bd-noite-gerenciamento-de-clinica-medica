@@ -40,4 +40,7 @@ Na primeira análise, quais foram os atributos iniciais encontrados?
 - Remédios = (<ins>ID</ins>, nome, laboratório, quantidade, validade, tarja, restrição, preço)
 - Prescrições = (<ins>ID</ins>, paciente, médico, data, descrição)
 
+# 5. Modelo Lógico
+
+![image](https://github.com/ICEI-PUC-Minas-PPC-CC/ppc-cc-2023-2-bd-noite-gerenciamento-de-clinica-medica/assets/117238473/f3cc159f-8a8d-41e7-adf5-796d429cb646)
 
