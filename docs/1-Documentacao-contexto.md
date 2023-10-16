@@ -44,3 +44,51 @@ Na primeira análise, quais foram os atributos iniciais encontrados?
 
 ![image](https://github.com/ICEI-PUC-Minas-PPC-CC/ppc-cc-2023-2-bd-noite-gerenciamento-de-clinica-medica/assets/117238473/f3cc159f-8a8d-41e7-adf5-796d429cb646)
 
+# 6. Modelo Físico
+```sql
+CREATE DATABASE bancodados;
+
+CREATE TABLE Medico(
+    medico_id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    medico_cpf CHAR(14) NOT NULL,
+    medico_crm VARCHAR(12) NOT NULL,
+    medico_nome VARCHAR(200) NOT NULL,
+    medico_data_nascimento DATE NOT NULL,
+    medico_telefone VARCHAR(20) NOT NULL,
+    medico_email VARCHAR(200) NOT NULL,
+    medico_especialidade VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE Paciente(
+    paciente_id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    paciente_cpf CHAR(14) NOT NULL UNIQUE,
+    paciente_nome VARCHAR(200) NOT NULL,
+    paciente_data_nascimento DATE NOT NULL,
+    paciente_telefone VARCHAR(20) NOT NULL,
+    paciente_email VARCHAR(200) NOT NULL,
+    paciente_endereco VARCHAR(200) NOT NULL,
+);
+
+CREATE TABLE Remedio(
+    remedio_id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    remedio_nome VARCHAR(200) NOT NULL,
+    remedio_laboratorio VARCHAR(200) NOT NULL,
+    remedio_validade DATE NOT NULL,
+    remedio_tarja VARCHAR(15) NOT NULL,
+    remedio_contraindicacao VARCHAR(200) NOT NULL,
+    remedio_preco FLOAT NOT NULL
+);
+
+CREATE TABLE Prescricao(
+    prescricao_id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    fk_medico_id INT, 
+    CONSTRAINT fk_medico_id FOREIGN KEY (fk_medico_id) REFERENCES Medico(medico_id),
+    fk_paciente_id INT, 
+    CONSTRAINT fk_paciente_id FOREIGN KEY (fk_paciente_id) REFERENCES Paciente(paciente_id),
+    fk_remedio_id INT, 
+    CONSTRAINT fk_remedio_id FOREIGN KEY (fk_remedio_id) REFERENCES Remedio(remedio_id),
+ 	prescricao_data DATE NOT NULL,
+    prescricao_descricao VARCHAR(1000) NOT NULL
+);
+```
+
